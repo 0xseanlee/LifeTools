@@ -4,7 +4,7 @@ function initNavbarSearch() {
     if (!input || !btn) return;
     function doSearch() {
         var q = input.value.trim();
-        if (q) window.location.href = "/pages/search.html?q=" + encodeURIComponent(q);
+        if (q) window.location.href = (location.pathname.indexOf("/pages/") !== -1 ? "search.html?q=" : "pages/search.html?q=") + encodeURIComponent(q);
     }
     btn.addEventListener("click", doSearch);
     input.addEventListener("keydown", function (e) { if (e.key === "Enter") doSearch(); });

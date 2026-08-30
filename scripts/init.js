@@ -11,10 +11,14 @@
 
     try {
         if (window.self !== window.top) {
-            window.top.location.href = "/pages/embed.html";
+            var isInPages = location.pathname.indexOf("/pages/") !== -1;
+            window.top.location.href = isInPages ? "embed.html" : "pages/embed.html";
         }
     } catch (_) {
-        try { window.parent.location.href = "/pages/embed.html"; } catch (_) {}
+        try {
+            var isInPages2 = location.pathname.indexOf("/pages/") !== -1;
+            window.parent.location.href = isInPages2 ? "embed.html" : "pages/embed.html";
+        } catch (_) {}
     }
 
     const RATE_WINDOW = 60000;
@@ -54,7 +58,7 @@
         let url = "";
         if (typeof input === "string") url = input;
         else if (input instanceof Request) url = input.url;
-        const isLocalConfig = url && (url.endsWith(".json") || url.includes("/config/"));
+        const isLocalConfig = url && (url.endsWith(".json") || url.includes("config/"));
         if (isLocalConfig) {
             const sep = url.includes("?") ? "&" : "?";
             const bustedUrl = url + sep + "_t=" + Date.now();

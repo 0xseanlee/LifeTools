@@ -16,12 +16,12 @@
     <meta name="twitter:description" content="專業的數據統計分析工具。輸入一組數值，即時算出平均數、中位數、眾數、標準差、變異數及四分位數等關鍵描述性統計指標。">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"統計數據分析器 - Life Tools","url":"https://lifetools.nett.to/pages/statistics.html","applicationCategory":"UtilityApplication","operatingSystem":"All","description":"專業的數據統計分析工具。輸入一組數值，即時算出平均數、中位數、眾數、標準差、變異數及四分位數等關鍵描述性統計指標。"}</script>
     <!-- 載入規定的初始化腳本 -->
-    <script src="/scripts/init.js"></script>
-    <script src="/scripts/common.js"></script>
+    <script src="../scripts/init.js"></script>
+    <script src="../scripts/common.js"></script>
     <!-- 引入 Google Fonts 與 Font Awesome 圖標庫 -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="/styles/common.css">
+    <link rel="stylesheet" href="../styles/common.css">
     
     <style>
         /* 全域基本樣式 */
@@ -386,11 +386,11 @@
     <!-- 頂部導覽列 -->
     <nav class="navbar">
         <div class="navbar-container">
-            <a href="/" class="nav-logo">
+            <a href="../index.html" class="nav-logo">
                 <i class="fa-solid fa-toolbox"></i> Life Tools
             </a>
             <div class="nav-right">
-                <a href="/pages/about.html" class="nav-link">關於我們</a>
+                <a href="about.html" class="nav-link">關於我們</a>
                 <div class="search-box">
                     <input type="text" id="navSearchInput" class="search-input" placeholder="搜尋工具...">
                     <button id="navSearchBtn" class="search-btn">
@@ -512,7 +512,7 @@
             const triggerSearch = () => {
                 const query = navInput.value.trim();
                 if (query) {
-                    window.location.href = `/pages/search.html?q=${encodeURIComponent(query)}`;
+                    window.location.href = `search.html?q=${encodeURIComponent(query)}`;
                 }
             };
 

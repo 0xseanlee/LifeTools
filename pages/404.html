@@ -13,11 +13,11 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="找不到網頁！正在重新嚮導... - Life Tools">
     <meta name="twitter:description" content="Life Tools 精緻工具箱 — 輕量、安全、免登入的線上工具箱，點開即用。">
-    <script src="/scripts/init.js"></script>
-    <script src="/scripts/common.js"></script>
+    <script src="../scripts/init.js"></script>
+    <script src="../scripts/common.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="/styles/common.css">
+    <link rel="stylesheet" href="../styles/common.css">
     
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Noto Sans TC', sans-serif; }
@@ -117,7 +117,7 @@
             <span>別擔心，將在 <span class="countdown-num" id="countdownLabel">3</span> 秒後自動帶您安全回家</span>
         </div>
 
-        <a href="/" class="home-btn">
+        <a href="../index.html" class="home-btn">
             <i class="fa-solid fa-house"></i> 立即返回首頁
         </a>
     </article>
@@ -142,7 +142,7 @@
                 // 倒數終了時，強制安全重定向回歸主網域首頁
                 if (secondsLeft <= 0) {
                     clearInterval(timerInterval);
-                    window.location.href = '/'; // 帶回根目錄首頁
+                    window.location.href = '../index.html'; // 帶回根目錄首頁
                 }
             }, 1000);
         }

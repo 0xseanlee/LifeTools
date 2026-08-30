@@ -23,10 +23,10 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="/styles/common.css">
+    <link rel="stylesheet" href="../styles/common.css">
     
-    <script src="/scripts/init.js"></script>
-    <script src="/scripts/common.js"></script>
+    <script src="../scripts/init.js"></script>
+    <script src="../scripts/common.js"></script>
 
     <style>
         /* 全域基本樣式 */
@@ -597,11 +597,11 @@
 
     <nav class="navbar" aria-label="主要導覽列">
         <div class="navbar-container">
-            <a href="/" class="nav-logo" aria-label="Life Tools 首頁">
+            <a href="../index.html" class="nav-logo" aria-label="Life Tools 首頁">
                 <i class="fa-solid fa-toolbox" aria-hidden="true"></i> Life Tools
             </a>
             <div class="nav-right">
-                <a href="/pages/about.html" class="nav-link">關於我們</a>
+                <a href="about.html" class="nav-link">關於我們</a>
                 <div class="search-box" role="search">
                     <input type="text" id="navSearchInput" class="search-input" placeholder="搜尋工具..." aria-label="搜尋框">
                     <button id="navSearchBtn" class="search-btn" aria-label="確認搜尋">
@@ -788,14 +788,14 @@
         // 使用者點選「拒絕」：將其強制導回首頁，不允許觀看與操作
         function declineDisclaimer() {
             sessionStorage.removeItem('lifeToolsBmiAuthorized');
-            window.location.href = '/';
+            window.location.href = '../index.html';
         }
 
         // 處理頂部導覽列搜尋重導向
         function executeSearch(query) {
             const trimmedQuery = query.trim();
             if (trimmedQuery) {
-                window.location.href = `/pages/search.html?q=${encodeURIComponent(trimmedQuery)}`;
+                window.location.href = `search.html?q=${encodeURIComponent(trimmedQuery)}`;
             }
         }
 

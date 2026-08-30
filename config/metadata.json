@@ -1,29 +1,167 @@
 [
-  {"name": "AI 圖片生成器","description": "以純 HTML/CSS 代碼渲染技術代替昂貴生圖！讓 AI 自由發揮，即時構築美輪美奐的向量視覺與比例畫幅。","path": "/pages/html-graphic.html","icon": "fa-solid fa-palette","pro": true},
-  {"name": "AI 冰箱剩食魔術師","description": "輸入家裡現有的剩餘食材與調味料，讓 AI 為您量身打造出精美、美味且不浪費的創意魔法食譜。","path": "/pages/fridge-chef.html","icon": "fa-solid fa-wand-magic-sparkles","pro": true},
-  {"name": "短網址產生器","description": "串接安全 LifeAPI 後端與 PicSee 服務，為您的一般網址快速生成極簡短網址，便於社群分享並支援一鍵複製與 QR Code 下載。","path": "/pages/shorturl.html","icon": "fa-solid fa-link","pro": true},
-  {"name": "全球線上時鐘","description": "內建全球五大指標時區快切。運用高效能語系解析技術，即時呈現台北、東京、倫敦、紐約及洛杉磯的精準時間與日期，並內建動態心跳訊號燈與日光節約時間自動校正。","path": "/pages/time.html","icon": "fa-solid fa-clock"},
-  {"name": "60秒極速打字比賽","description": "挑戰一分鐘中文打字速度！內建隨機多題庫抽題系統、60秒限時倒數，並提供即時速度（WPM）與錯字視覺色彩對比分析，完全本地端流暢運行。","path": "/pages/typing-test.html","icon": "fa-solid fa-keyboard"},
-  {"name": "IP位址查詢","description": "串接安全 LifeAPI 後端，即時偵測並顯示您當前的公網 IP 位址，具備連線狀態監控與一鍵複製功能。","path": "/pages/ip.html","icon": "fa-solid fa-network-wired"},
-  {"name": "AI 塔羅牌心靈占卜","description": "融合純前端 3D 翻牌動效與 LifeAPI 智慧大模型。隨機抽取三張牌，為您的愛情、事業或人生迷惘進行深度的神祕學心靈解讀與指引。","path": "/pages/tarot.html","icon": "fa-solid fa-wand-magic-sparkles"},
-  {"name": "AI 心靈陪伴心理師","description": "當您身處人生低谷或感到迷惘時的心靈港灣。結合情緒標籤與深度心聲傾聽，提供溫柔、非評價且具備正念調適建議的智慧心靈回信。","path": "/pages/psychologist.html","icon": "fa-solid fa-hand-holding-heart"},
-  {"name": "隨機抽籤輪盤","description": "客製化名單的線上幸運大輪盤，支援即時編輯與擬真轉動音效，決定午餐或抽獎的最佳助手。","path": "/pages/wheel.html","icon": "fa-solid fa-dharmachakra"},
-  {"name": "隨機座位抽籤","description": "支援自訂教室行列大小，可隨意剔除空位，具備三秒隨機跳號動畫的現代感座位安排系統。","path": "/pages/seat.html","icon": "fa-solid fa-chair"},
-  {"name": "情侶星座匹配度分析","description": "運用占星學星象共鳴演算法，即時算出男女雙方星座的契合度分數，並提供深度的愛情解析與相處指南。","path": "/pages/zodiac.html","icon": "fa-solid fa-heart"},
-  {"name": "萬用單位換算器","description": "支援長度、重量、溫度、面積與體積等五大類別、十種以上常用單位的雙向即時換算工具。","path": "/pages/converter.html","icon": "fa-solid fa-arrow-rotate-left"},
-  {"name": "萬用線上檔案壓縮器","description": "安全且100%本地端進行的檔案壓縮工具。支援圖片有損壓縮，以及 PDF、PPTX 等各類文件之 Gzip 串流無損打包壓縮。","path": "/pages/compressor.html","icon": "fa-solid fa-file-zipper"},
-  {"name": "倒數計時器","description": "具備現代感 SVG 圓環進度條的線上計時器。支援常用時間快速預設、自訂時分秒，並內建 Web Audio 氣泡和弦電子音鈴聲。","path": "/pages/timer.html","icon": "fa-solid fa-hourglass-half"},
-  {"name": "精緻 QR Code 產生器","description": "本地端快速生成 QR Code 條碼工具。支援自訂尺寸、前景色與背景色，並提供高解析度 PNG 下載功能，確保您的網址與文字內容隱私不外洩。","path": "/pages/qrcode.html","icon": "fa-solid fa-qrcode"},
-  {"name": "萬能唬爛產生器","description": "經典的廢話文章生成工具。輸入任意主題與指定字數下限，即可在彈指之間為您編織出篇幅宏大、用詞高深卻毫無實質內容的華麗文章。","path": "/pages/bullshit.html","icon": "fa-solid fa-pen-nib"},
-  {"name": "英文單字接龍遊戲","description": "具備現代化 UI 的英語單字字尾接龍遊戲。內建 API 即時字典校驗，自動防範重複單字與非法拼字，是學習與挑戰字彙量的好幫手。","path": "/pages/shiritori.html","icon": "fa-solid fa-font"},
-  {"name": "統計數據分析器","description": "專業的數據統計分析工具。輸入一組數值，即時算出平均數、中位數、眾數、標準差、變異數及四分位數等關鍵描述性統計指標。","path": "/pages/statistics.html","icon": "fa-solid fa-chart-simple"},
-  {"name": "萬能清單亂序洗牌器","description": "名單與文字行隨機排序工具。輸入任意名單或項目，一鍵將其完全打亂順序，並支援即時字數行數統計與快速複製。","path": "/pages/shuffler.html","icon": "fa-solid fa-shuffle"},
-  {"name": "現代感多功能計算機","description": "具備豐富微動效與運算歷程紀錄的網頁計算機。支援四則運算、百分比餘數計算，並完美適應手機與電腦螢幕。","path": "/pages/calculator.html","icon": "fa-solid fa-calculator"},
-  {"name": "現代感 BMI / BMR / TDEE 健康體態計算機","description": "一鍵精準分析 BMI、基礎代謝率(BMR)與每日總消耗熱量(TDEE)。內建視覺化彩色狀態指標滑條，支援性別活動量多維度本地端安全運算。","path": "/pages/bmi.html","icon": "fa-solid fa-heart-pulse"},
-  {"name": "萬用即時匯率換算器","description": "支援全球主流貨幣的線上匯率試算與雙向換算工具。內建直覺的現代感外幣面板！","path": "/pages/exchange-rate.html","icon": "fa-solid fa-money-bill-transfer"},
-  {"name": "萬用字數與行數統計器","description": "即時統計總字數、不含空白字數、中英文字元、數字與段落行數。內建主流社群與簡訊字數限制進度條提示，完全本地端流暢分析。","path": "/pages/text-counter.html","icon": "fa-solid fa-file-lines"},
-  {"name": "線上 HTTP 請求測試器","description": "輕量免安裝的線上 API 請求測試工具。支援自訂方法、多組 Headers 與 Body 負載，並內建深色模式 JSON 美化解析與延遲偵測。","path": "/pages/http-tester.html","icon": "fa-solid fa-satellite-dish"},
-  {"name": "顏色代碼色彩選取器","description": "專業的前端與設計師選色工具。支援 HEX, RGB, HSL 雙向即時轉換，內建多款流行漸層與質感調色盤，並提供一鍵複製色碼功能。","path": "/pages/color-picker.html","icon": "fa-solid fa-palette"},
-  {"name": "網頁儲存空間檢查器","description": "即時分析當前瀏覽器的 localStorage、sessionStorage 配額消耗與剩餘磁碟容量上限，具備全方位的連線儲存管理與一鍵安全清理本地快取功能。","path": "/pages/storage-checker.html","icon": "fa-solid fa-database"},
-  {"name": "模擬系統更新畫面", "description": "打工人專屬高擬真系統升級更新摸魚畫面。內建 macOS 與 Windows 11 雙原生主題樣式，支援沉浸式全螢幕與動態隱藏滑鼠游標，提供短暫且合理的休憩空間。", "path": "/pages/fake-update.html", "icon": "fa-solid fa-desktop"}
+  {
+    "name": "AI 圖片生成器",
+    "description": "以純 HTML/CSS 代碼渲染技術代替昂貴生圖！讓 AI 自由發揮，即時構築美輪美奐的向量視覺與比例畫幅。",
+    "path": "pages/html-graphic.html",
+    "icon": "fa-solid fa-palette",
+    "pro": true
+  },
+  {
+    "name": "AI 冰箱剩食魔術師",
+    "description": "輸入家裡現有的剩餘食材與調味料，讓 AI 為您量身打造出精美、美味且不浪費的創意魔法食譜。",
+    "path": "pages/fridge-chef.html",
+    "icon": "fa-solid fa-wand-magic-sparkles",
+    "pro": true
+  },
+  {
+    "name": "短網址產生器",
+    "description": "串接安全 LifeAPI 後端與 PicSee 服務，為您的一般網址快速生成極簡短網址，便於社群分享並支援一鍵複製與 QR Code 下載。",
+    "path": "pages/shorturl.html",
+    "icon": "fa-solid fa-link",
+    "pro": true
+  },
+  {
+    "name": "全球線上時鐘",
+    "description": "內建全球五大指標時區快切。運用高效能語系解析技術，即時呈現台北、東京、倫敦、紐約及洛杉磯的精準時間與日期，並內建動態心跳訊號燈與日光節約時間自動校正。",
+    "path": "pages/time.html",
+    "icon": "fa-solid fa-clock"
+  },
+  {
+    "name": "60秒極速打字比賽",
+    "description": "挑戰一分鐘中文打字速度！內建隨機多題庫抽題系統、60秒限時倒數，並提供即時速度（WPM）與錯字視覺色彩對比分析，完全本地端流暢運行。",
+    "path": "pages/typing-test.html",
+    "icon": "fa-solid fa-keyboard"
+  },
+  {
+    "name": "IP位址查詢",
+    "description": "串接安全 LifeAPI 後端，即時偵測並顯示您當前的公網 IP 位址，具備連線狀態監控與一鍵複製功能。",
+    "path": "pages/ip.html",
+    "icon": "fa-solid fa-network-wired"
+  },
+  {
+    "name": "AI 塔羅牌心靈占卜",
+    "description": "融合純前端 3D 翻牌動效與 LifeAPI 智慧大模型。隨機抽取三張牌，為您的愛情、事業或人生迷惘進行深度的神祕學心靈解讀與指引。",
+    "path": "pages/tarot.html",
+    "icon": "fa-solid fa-wand-magic-sparkles"
+  },
+  {
+    "name": "AI 心靈陪伴心理師",
+    "description": "當您身處人生低谷或感到迷惘時的心靈港灣。結合情緒標籤與深度心聲傾聽，提供溫柔、非評價且具備正念調適建議的智慧心靈回信。",
+    "path": "pages/psychologist.html",
+    "icon": "fa-solid fa-hand-holding-heart"
+  },
+  {
+    "name": "隨機抽籤輪盤",
+    "description": "客製化名單的線上幸運大輪盤，支援即時編輯與擬真轉動音效，決定午餐或抽獎的最佳助手。",
+    "path": "pages/wheel.html",
+    "icon": "fa-solid fa-dharmachakra"
+  },
+  {
+    "name": "隨機座位抽籤",
+    "description": "支援自訂教室行列大小，可隨意剔除空位，具備三秒隨機跳號動畫的現代感座位安排系統。",
+    "path": "pages/seat.html",
+    "icon": "fa-solid fa-chair"
+  },
+  {
+    "name": "情侶星座匹配度分析",
+    "description": "運用占星學星象共鳴演算法，即時算出男女雙方星座的契合度分數，並提供深度的愛情解析與相處指南。",
+    "path": "pages/zodiac.html",
+    "icon": "fa-solid fa-heart"
+  },
+  {
+    "name": "萬用單位換算器",
+    "description": "支援長度、重量、溫度、面積與體積等五大類別、十種以上常用單位的雙向即時換算工具。",
+    "path": "pages/converter.html",
+    "icon": "fa-solid fa-arrow-rotate-left"
+  },
+  {
+    "name": "萬用線上檔案壓縮器",
+    "description": "安全且100%本地端進行的檔案壓縮工具。支援圖片有損壓縮，以及 PDF、PPTX 等各類文件之 Gzip 串流無損打包壓縮。",
+    "path": "pages/compressor.html",
+    "icon": "fa-solid fa-file-zipper"
+  },
+  {
+    "name": "倒數計時器",
+    "description": "具備現代感 SVG 圓環進度條的線上計時器。支援常用時間快速預設、自訂時分秒，並內建 Web Audio 氣泡和弦電子音鈴聲。",
+    "path": "pages/timer.html",
+    "icon": "fa-solid fa-hourglass-half"
+  },
+  {
+    "name": "精緻 QR Code 產生器",
+    "description": "本地端快速生成 QR Code 條碼工具。支援自訂尺寸、前景色與背景色，並提供高解析度 PNG 下載功能，確保您的網址與文字內容隱私不外洩。",
+    "path": "pages/qrcode.html",
+    "icon": "fa-solid fa-qrcode"
+  },
+  {
+    "name": "萬能唬爛產生器",
+    "description": "經典的廢話文章生成工具。輸入任意主題與指定字數下限，即可在彈指之間為您編織出篇幅宏大、用詞高深卻毫無實質內容的華麗文章。",
+    "path": "pages/bullshit.html",
+    "icon": "fa-solid fa-pen-nib"
+  },
+  {
+    "name": "英文單字接龍遊戲",
+    "description": "具備現代化 UI 的英語單字字尾接龍遊戲。內建 API 即時字典校驗，自動防範重複單字與非法拼字，是學習與挑戰字彙量的好幫手。",
+    "path": "pages/shiritori.html",
+    "icon": "fa-solid fa-font"
+  },
+  {
+    "name": "統計數據分析器",
+    "description": "專業的數據統計分析工具。輸入一組數值，即時算出平均數、中位數、眾數、標準差、變異數及四分位數等關鍵描述性統計指標。",
+    "path": "pages/statistics.html",
+    "icon": "fa-solid fa-chart-simple"
+  },
+  {
+    "name": "萬能清單亂序洗牌器",
+    "description": "名單與文字行隨機排序工具。輸入任意名單或項目，一鍵將其完全打亂順序，並支援即時字數行數統計與快速複製。",
+    "path": "pages/shuffler.html",
+    "icon": "fa-solid fa-shuffle"
+  },
+  {
+    "name": "現代感多功能計算機",
+    "description": "具備豐富微動效與運算歷程紀錄的網頁計算機。支援四則運算、百分比餘數計算，並完美適應手機與電腦螢幕。",
+    "path": "pages/calculator.html",
+    "icon": "fa-solid fa-calculator"
+  },
+  {
+    "name": "現代感 BMI / BMR / TDEE 健康體態計算機",
+    "description": "一鍵精準分析 BMI、基礎代謝率(BMR)與每日總消耗熱量(TDEE)。內建視覺化彩色狀態指標滑條，支援性別活動量多維度本地端安全運算。",
+    "path": "pages/bmi.html",
+    "icon": "fa-solid fa-heart-pulse"
+  },
+  {
+    "name": "萬用即時匯率換算器",
+    "description": "支援全球主流貨幣的線上匯率試算與雙向換算工具。內建直覺的現代感外幣面板！",
+    "path": "pages/exchange-rate.html",
+    "icon": "fa-solid fa-money-bill-transfer"
+  },
+  {
+    "name": "萬用字數與行數統計器",
+    "description": "即時統計總字數、不含空白字數、中英文字元、數字與段落行數。內建主流社群與簡訊字數限制進度條提示，完全本地端流暢分析。",
+    "path": "pages/text-counter.html",
+    "icon": "fa-solid fa-file-lines"
+  },
+  {
+    "name": "線上 HTTP 請求測試器",
+    "description": "輕量免安裝的線上 API 請求測試工具。支援自訂方法、多組 Headers 與 Body 負載，並內建深色模式 JSON 美化解析與延遲偵測。",
+    "path": "pages/http-tester.html",
+    "icon": "fa-solid fa-satellite-dish"
+  },
+  {
+    "name": "顏色代碼色彩選取器",
+    "description": "專業的前端與設計師選色工具。支援 HEX, RGB, HSL 雙向即時轉換，內建多款流行漸層與質感調色盤，並提供一鍵複製色碼功能。",
+    "path": "pages/color-picker.html",
+    "icon": "fa-solid fa-palette"
+  },
+  {
+    "name": "網頁儲存空間檢查器",
+    "description": "即時分析當前瀏覽器的 localStorage、sessionStorage 配額消耗與剩餘磁碟容量上限，具備全方位的連線儲存管理與一鍵安全清理本地快取功能。",
+    "path": "pages/storage-checker.html",
+    "icon": "fa-solid fa-database"
+  },
+  {
+    "name": "模擬系統更新畫面",
+    "description": "打工人專屬高擬真系統升級更新摸魚畫面。內建 macOS 與 Windows 11 雙原生主題樣式，支援沉浸式全螢幕與動態隱藏滑鼠游標，提供短暫且合理的休憩空間。",
+    "path": "pages/fake-update.html",
+    "icon": "fa-solid fa-desktop"
+  }
 ]
