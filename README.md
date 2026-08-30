@@ -65,7 +65,7 @@
 - **自訂彈窗 (Custom Modal)**：所有錯誤、防呆提示或警告，必須使用自訂的 `.modal-overlay` 彈窗（搭配淡入、彈出縮放動畫）來呈現，並提供關閉/確認按鈕。
 - **Toast 提示**：微小互動成功（例如複製、清除金鑰）請使用底部的 Toast 提示（`showToastNotification(message)`）顯示 2.5 秒。
 - **語言與版權**：語系使用繁體中文（`lang="zh-TW"`）。頁面底下必須有著作權宣告文字：
-  `&copy; Royal Devotee (NeuralNexusLab X 0xseanlee), all rights reserved.`
+  `&copy; 0xseanlee, all rights reserved.`
 
 ---
 
@@ -75,17 +75,17 @@
 - 不需要引入 LifeAPI。
 
 #### 【類型 B：一般 API 聯網工具】 (如：IP檢測器)
-- 必須在 `<head>` 中引入 SDK：`<script src="https://lifetools.nett.to/scripts/lifeapi.js"></script>`。
+- 必須在 `<head>` 中引入 SDK：`<script src="https://0xseanlee.github.io/LifeTools/scripts/lifeapi.js"></script>`。
 - 執行 fetch 請求前，必須先執行 `connect().then(exfunc).catch(console.error)` 連線握手成功後，才能呼叫 API。
 
 #### 【類型 C：PRO 專業版工具】 (如：AI占卜師、短網址產生器)
-- 必須在 `<head>` 中引入 SDK：`<script src="https://lifetools.nett.to/scripts/lifeapi.js"></script>`。
+- 必須在 `<head>` 中引入 SDK：`<script src="https://0xseanlee.github.io/LifeTools/scripts/lifeapi.js"></script>`。
 - 執行 fetch 請求前，必須先執行 `connect()` 連線握手，且 POST 請求時必須在 body 內帶入 `passkey: proKey` 參數。
 - **Pro 授權啟用彈窗**：
   - 初始化若無儲存金鑰，自動彈出無法隨意關閉的 `proModal`。
   - 彈窗包含密碼輸入框（`id="proKeyInput"`）與啟用按鈕，且必須將其包裹在 `<form>` 標籤中，以避免 Chrome 出現 form-less 密碼欄位安全警告。
   - 啟用按鈕下方包含「點擊此處清除舊密鑰」的清除按鈕（`clearProKey()`）。
-  - 彈窗底部包含註冊提示：「尚未擁有密鑰？請寄信聯絡 royaldevotee@nxlab.zone.id 申請。」
+  - 彈窗底部包含註冊提示：「尚未擁有密鑰？請寄信聯絡 sean0970802201@gmail.com 申請。」
 - **Pro 標籤與登出按鈕**：
   - 若本機已有密鑰，初始化時自動在 `<h1>` 標題右側渲染金色 PRO 皇冠徽章（`<span class="pro-badge"><i class="fa-solid fa-crown"></i>PRO</span>`）。
   - 在主畫面的輸入框/操作按鈕下方，顯現「登出並清除 Pro 密鑰」的按鈕（`#logoutBtn`，預設為 `display: none;`）。點擊時觸發 `clearProKey()`。
@@ -120,7 +120,7 @@ Pro工具 也就是說這個工具需要透過我們發送密鑰才能使用。
 Pro工具定義以及要求: 
 ### 1. Pro工具要做的比其他工具還更具方便性，創意性和難度
 ### 2. Pro工具的核心在後端 因為前端毫無隱私可言 (例如LLM API服務)
-### 3. Pro工具的許可證(一組passkey)是要由Royal Devotee(開發者)發送密鑰給使用者 並且在使用者打開Pro工具時要輸入才能使用該工具的功能
+### 3. Pro工具的許可證(一組passkey)是要由0xseanlee(開發者)發送密鑰給使用者 並且在使用者打開Pro工具時要輸入才能使用該工具的功能
 ### 4. Pro工具的metadata.json要多一個key:value 就是要多"pro": true
 
-LifeAPI PRO API介紹: [PRO.md](https://github.com/RoyalDevotee/LifeAPI/blob/main/PRO.md)
+LifeAPI PRO API介紹: [PRO.md](https://github.com/0xseanlee/LifeAPI/blob/main/PRO.md)

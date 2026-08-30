@@ -1,26 +1,5 @@
 [
   {
-    "name": "AI 圖片生成器",
-    "description": "以純 HTML/CSS 代碼渲染技術代替昂貴生圖！讓 AI 自由發揮，即時構築美輪美奐的向量視覺與比例畫幅。",
-    "path": "pages/html-graphic.html",
-    "icon": "fa-solid fa-palette",
-    "pro": true
-  },
-  {
-    "name": "AI 冰箱剩食魔術師",
-    "description": "輸入家裡現有的剩餘食材與調味料，讓 AI 為您量身打造出精美、美味且不浪費的創意魔法食譜。",
-    "path": "pages/fridge-chef.html",
-    "icon": "fa-solid fa-wand-magic-sparkles",
-    "pro": true
-  },
-  {
-    "name": "短網址產生器",
-    "description": "串接安全 LifeAPI 後端與 PicSee 服務，為您的一般網址快速生成極簡短網址，便於社群分享並支援一鍵複製與 QR Code 下載。",
-    "path": "pages/shorturl.html",
-    "icon": "fa-solid fa-link",
-    "pro": true
-  },
-  {
     "name": "全球線上時鐘",
     "description": "內建全球五大指標時區快切。運用高效能語系解析技術，即時呈現台北、東京、倫敦、紐約及洛杉磯的精準時間與日期，並內建動態心跳訊號燈與日光節約時間自動校正。",
     "path": "pages/time.html",

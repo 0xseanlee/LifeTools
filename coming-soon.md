@@ -6,7 +6,7 @@
     
     <title>工具正在全力建造中！ - Life Tools</title>
     <meta name="description" content="Life Tools 精緻工具箱的新功能正在全力開發中。輕量、安全、免登入的本地端萬用生活小工具，敬請期待！">
-    <meta name="author" content="Royal Devotee (NeuralNexusLab X 0xseanlee)">
+    <meta name="author" content="0xseanlee">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -331,7 +331,7 @@
     </main>
 
     <footer class="footer">
-        &copy; Royal Devotee (NeuralNexusLab X 0xseanlee), all rights reserved.
+        &copy; 0xseanlee, all rights reserved.
     </footer>
 
     <script>
