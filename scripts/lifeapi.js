@@ -1,28 +1,25 @@
-function connect(interval = 1000, timeout = 30000) {
-    return new Promise((resolve, reject) => {
-        const startTime = Date.now();
-
-        const connection = setInterval(() => {
+function connect(interval, timeout) {
+    if (interval === undefined) interval = 1000;
+    if (timeout === undefined) timeout = 30000;
+    return new Promise(function (resolve, reject) {
+        var start = Date.now();
+        var timer = setInterval(function () {
             fetch("https://lifeapi.zone.id/connect")
-                .then(res => {
-                    if (!res.ok) {
-                        throw new Error(`HTTP ${res.status}`);
-                    }
+                .then(function (res) {
+                    if (!res.ok) throw new Error("HTTP " + res.status);
                     return res.text();
                 })
-                .then(resp => {
-                    if (resp.includes("CONNECTED")) {
-                        clearInterval(connection);
-                        resolve(resp);
-                    }
-
-                    if (Date.now() - startTime >= timeout) {
-                        clearInterval(connection);
+                .then(function (body) {
+                    if (body.indexOf("CONNECTED") !== -1) {
+                        clearInterval(timer);
+                        resolve(body);
+                    } else if (Date.now() - start >= timeout) {
+                        clearInterval(timer);
                         reject(new Error("Connection timeout"));
                     }
                 })
-                .catch(err => {
-                    clearInterval(connection);
+                .catch(function (err) {
+                    clearInterval(timer);
                     reject(err);
                 });
         }, interval);

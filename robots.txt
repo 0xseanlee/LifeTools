@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /pages/embed.html
+
+Sitemap: https://lifetools.nett.to/sitemap.xml
