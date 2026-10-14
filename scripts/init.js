@@ -25,51 +25,53 @@
     const RATE_LIMIT = 60;
     const LOCKOUT_DURATION = 300000;
 
-    function isLockedOut() {
-        const end = parseInt(localStorage.getItem("lifeToolsLockoutEnd") || "0", 10);
-        if (Date.now() < end) {
-            document.documentElement.innerHTML = "";
-            return true;
-        }
-        if (end) localStorage.removeItem("lifeToolsLockoutEnd");
-        return false;
+    // 儲存空間被封鎖或已滿時，仍允許頁面與工具正常運行。
+    function readStoredValue(key) {
+        try { return localStorage.getItem(key); } catch (_) { return null; }
     }
 
+    // 限流只限制請求，不移除使用者的頁面與輸入內容。
     function trackRequest() {
-        if (isLockedOut()) return;
         const now = Date.now();
+        const end = Number(readStoredValue("lifeToolsLockoutEnd")) || 0;
+        if (now < end) return false;
         let history;
         try {
-            history = JSON.parse(localStorage.getItem("lifeToolsRequestHistory") || "[]");
+            history = JSON.parse(readStoredValue("lifeToolsRequestHistory") || "[]");
             if (!Array.isArray(history)) history = [];
         } catch (_) { history = []; }
-        history = history.filter(function (t) { return now - t < RATE_WINDOW; });
+        history = history.filter(function (t) {
+            return Number.isFinite(t) && t <= now && now - t < RATE_WINDOW;
+        });
         history.push(now);
-        try { localStorage.setItem("lifeToolsRequestHistory", JSON.stringify(history)); } catch (_) {}
-        if (history.length > RATE_LIMIT) {
-            localStorage.setItem("lifeToolsLockoutEnd", String(now + LOCKOUT_DURATION));
-            document.documentElement.innerHTML = "";
-        }
+        try {
+            localStorage.setItem("lifeToolsRequestHistory", JSON.stringify(history));
+            if (history.length > RATE_LIMIT) {
+                localStorage.setItem("lifeToolsLockoutEnd", String(now + LOCKOUT_DURATION));
+            } else if (end) {
+                localStorage.removeItem("lifeToolsLockoutEnd");
+            }
+        } catch (_) {}
+        return history.length <= RATE_LIMIT;
     }
 
     const originalFetch = window.fetch;
+    // 僅更新同源設定檔的快取，保留外部 API 網址與呼叫者的選項。
     window.fetch = function (input, init) {
-        trackRequest();
-        let url = "";
-        if (typeof input === "string") url = input;
-        else if (input instanceof Request) url = input.url;
-        const isLocalConfig = url && (url.endsWith(".json") || url.includes("config/"));
-        if (isLocalConfig) {
-            const sep = url.includes("?") ? "&" : "?";
-            const bustedUrl = url + sep + "_t=" + Date.now();
-            const nextInit = init || {};
-            nextInit.cache = "no-store";
-            if (input instanceof Request) input = new Request(bustedUrl, input);
-            else input = bustedUrl;
-            return originalFetch(input, nextInit);
+        if (!trackRequest()) {
+            return Promise.reject(new Error("請求過於頻繁，請稍後再試。"));
         }
-        return originalFetch(input, init);
+        const isRequest = input instanceof Request;
+        const url = new URL(isRequest ? input.url : input, location.href);
+        const method = (init && init.method || (isRequest ? input.method : "GET")).toUpperCase();
+        const isLocalConfig = url.origin === location.origin &&
+            /\/config\/.*\.json$/.test(url.pathname) && method === "GET";
+        if (isLocalConfig) {
+            url.searchParams.set("_t", String(Date.now()));
+            const nextInit = Object.assign({}, init, { cache: "no-store" });
+            const nextInput = isRequest ? new Request(url.href, input) : url.href;
+            return originalFetch.call(window, nextInput, nextInit);
+        }
+        return originalFetch.call(window, input, init);
     };
-
-    if (isLockedOut()) return;
 })();

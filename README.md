@@ -1,5 +1,9 @@
 # LifeTools
 
+## 回歸測試
+
+使用 Node.js 18 或更新版本執行 `node --test tests/runtime.test.cjs`，檢查共用請求處理、API 握手逾時、計算機操作、頁面腳本語法與工具註冊路徑。
+
 ## 1. repo介紹:
 這個repo裡的程式碼為靜態網站(HTML)，會被架設在Tencent Cloud的Edgeone。
 
@@ -19,7 +23,7 @@
 有任何寫法不會的可以問BrightSpecter或是找專門介紹那個檔案的.md 介紹檔
 每個HTML程式都要在<head>的標籤內新增
 ```
-<script src="/scripts/init.html"></script>
+<script src="../scripts/init.js"></script>
 ```
 每個工具都要到/config/metadata.json註冊 不然不會出現在搜尋結果
 

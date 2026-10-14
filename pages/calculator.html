@@ -479,6 +479,7 @@
         let previousInput = '';
         let operation = null;
         let isCalculated = false;
+        let waitingForOperand = false;
         let historyData = [];
 
         document.addEventListener('DOMContentLoaded', () => {
@@ -515,7 +516,8 @@
         // 點擊數字或小數點之處發動作
         function appendNumber(num) {
             // 如果剛剛才計算完畢，再度點選數字時直接清空重算
-            if (isCalculated) {
+            if (isCalculated || waitingForOperand) {
+                waitingForOperand = false;
                 currentInput = num === '.' ? '0.' : num;
                 isCalculated = false;
             } else {
@@ -531,19 +533,19 @@
 
         // 點擊運算子符號之處發動作
         function appendOperator(op) {
-            if (operation !== null && !isCalculated) {
-                calculateResult(); // 支援連續不中斷運算
+            if (operation !== null && !waitingForOperand) {
+                if (!calculateResult()) return; // 支援連續不中斷運算
             }
             previousInput = currentInput;
             operation = op;
             isCalculated = false;
-            currentInput = '0';
+            waitingForOperand = true;
             updateScreen();
         }
 
         // 倒退刪除單一欄位字元
         function backspace() {
-            if (isCalculated) return;
+            if (isCalculated || waitingForOperand) return;
             if (currentInput.length > 1) {
                 currentInput = currentInput.slice(0, -1);
             } else {
@@ -558,12 +560,13 @@
             previousInput = '';
             operation = null;
             isCalculated = false;
+            waitingForOperand = false;
             updateScreen();
         }
 
         // 執行結果運算的核心處理機制
         function calculateResult() {
-            if (operation === null || previousInput === '') return;
+            if (operation === null || previousInput === '' || waitingForOperand) return false;
             
             let result = 0;
             const prev = parseFloat(previousInput);
@@ -578,14 +581,28 @@
                 case '*': result = prev * current; break;
                 case '/': 
                     if (current === 0) {
-                        alert('錯誤：除數不能為零！');
+                        showModal('錯誤：除數不能為零！');
                         clearAll();
-                        return;
+                        return false;
                     }
                     result = prev / current; 
                     break;
-                case '%': result = prev % current; break;
+                case '%':
+                    if (current === 0) {
+                        showModal('錯誤：餘數運算的除數不能為零！');
+                        clearAll();
+                        return false;
+                    }
+                    result = prev % current;
+                    break;
                 default: return;
+            }
+
+            // 避免溢位結果進入歷史紀錄。
+            if (!Number.isFinite(result)) {
+                showModal('運算結果超出可計算範圍。');
+                clearAll();
+                return false;
             }
 
             // 清理並限制浮點數最高精度，去除無意義尾贅 0
@@ -598,7 +615,9 @@
             operation = null;
             previousInput = '';
             isCalculated = true;
+            waitingForOperand = false;
             updateScreen();
+            return true;
         }
 
         // 將當前的變數資料渲染呈現於畫面上
@@ -655,6 +674,7 @@
         function reuseHistoryResult(val) {
             currentInput = val.toString();
             isCalculated = false;
+            waitingForOperand = false;
             updateScreen();
         }
 
