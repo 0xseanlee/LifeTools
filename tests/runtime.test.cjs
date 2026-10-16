@@ -124,6 +124,6 @@ test('all inline and shared scripts parse and registered tools exist', () => {
             else if (!/src=/i.test(match[1])) new vm.Script(match[2], { filename: file });
         }
     }
-    for (const file of fs.readdirSync(path.join(root, 'scripts'))) new vm.Script(fs.readFileSync(path.join(root, 'scripts', file), 'utf8'));
+    for (const file of fs.readdirSync(path.join(root, 'scripts')).filter(file => file.endsWith('.js'))) new vm.Script(fs.readFileSync(path.join(root, 'scripts', file), 'utf8'));
     for (const tool of JSON.parse(fs.readFileSync(path.join(root, 'config/metadata.json'), 'utf8'))) assert.ok(fs.existsSync(path.join(root, tool.path)), tool.path);
 });

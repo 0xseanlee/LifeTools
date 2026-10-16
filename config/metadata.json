@@ -142,5 +142,11 @@
     "description": "打工人專屬高擬真系統升級更新摸魚畫面。內建 macOS 與 Windows 11 雙原生主題樣式，支援沉浸式全螢幕與動態隱藏滑鼠游標，提供短暫且合理的休憩空間。",
     "path": "pages/fake-update.html",
     "icon": "fa-solid fa-desktop"
+  },
+  {
+    "name": "圖片合併成 PDF",
+    "description": "將多張 JPG、PNG、WebP 圖片合併成一份 PDF。支援預覽、排序、旋轉與 A4 頁面方向，圖片全程在瀏覽器內處理。",
+    "path": "pages/images-to-pdf.html",
+    "icon": "fa-solid fa-file-pdf"
   }
 ]
